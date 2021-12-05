@@ -1,5 +1,4 @@
 let i = 999;
-let j = 999;
 let product = 0;
 let reverseProduct = 0;
 let array = [];
@@ -26,6 +25,7 @@ while (i >= 100) {
     }
     j--;
   }
+  j = 999;
   i--;
 }
 array.sort((a, b) => a > b);
