@@ -3,13 +3,13 @@ let j = 1;
 let array = [];
 let fib = 0;
 
-while (i < 4000000 || j < 4000000) {
-  if (i % 2 === 0) {
+while (i < 4000000 && j < 4000000) {
+  if (i % 2 === 0 && i < 4000000) {
     array.push(i);
     fib = fib + i;
   }
   i = i + j;
-  if (j % 2 === 0) {
+  if (j % 2 === 0 && j < 4000000) {
     array.push(j);
     fib = fib + j;
   }
