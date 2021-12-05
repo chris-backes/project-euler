@@ -32,7 +32,7 @@ Then, the second conditional check the same qualities in j, logs the evens, and 
 
 We set to the next value in the sequence by seting either i or j to sum of i and j, and the one set is the one that was just check for evenness.
 
-The while loop ends when both i and j are above four million. If we set it to either rather than both, there is a scenario where one is above the that and the other is both below that and even, and *would not get logged since the while loop would have stopped*. To prevent that, we set to both, and have each if conditional check for being less than the limit as well.
+The while loop ends when both i and j are above four million. If we set it to either rather than both, there is a scenario where one is above the that and the other is both below that and even, and _would not get logged since the while loop would have stopped_. To prevent that, we set to both, and have each if conditional check for being less than the limit as well.
 
 There is also an array in this script that does not perform any task related to the goal of this exercise, but it does log the evens so I can verify it is working correctly.
 
@@ -60,7 +60,19 @@ The second starts right after that, checking for the same, and iterates by subtr
 
 ## Smallest Multiple
 
-Under Construction
+```
+2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+
+What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+```
+
+Solution: The solution is broken into three parts. To understand the solution, we must first understand that the least common multiple of any consecutive set of numbers beginning at 1 (or 2) is the product of the primes in that set, where each prime m is raised to the power p such that m^p is still less than or equal to the uppoer boundary of the set. For example the least common multiple of 1 through 4 is 3 \* 2^2, or 12.
+
+In the first part, we fin all primes contain between 1 and n (here, n equals 20).
+
+In the second part, we take all those primes and raise them to their highest exponential power such that the value is still less than n (2 gets raised to the power of 4, 3 is raised to the power of 2, and the remaining primes stay at the power of 1).
+
+In the third part, those numbers are multiplied togetehr
 
 ## Sum Square Difference
 
@@ -74,7 +86,7 @@ Hence the difference between the sum of the squares of the first ten natural num
 Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
 ```
 
-Solution: we have two different four loops. 
+Solution: we have two different four loops.
 
 The one in which we need to square the numbers, and then sum those up, has two variable declared. One squares the number currently being iterated. The other stores the sums of those.
 
@@ -123,6 +135,23 @@ The four adjacent digits in the 1000-digit number that have the greatest product
 Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?
 ```
 
-Solution: We store the number, then convert it to an array. A while loop that iterates from the number of digits minus the amount of numbers multiplied. Each iteration multiplies 13 consecutive members of the array (array[i] * array[i+1]...), and the product is stored in an array.
+Solution: We store the number, then convert it to an array. A while loop that iterates from the number of digits minus the amount of numbers multiplied. Each iteration multiplies 13 consecutive members of the array (array[i] \* array[i+1]...), and the product is stored in an array.
 
 Once the loop is finished, the array storing all the products is sorted from least to greatest, and the last one is logged.
+
+## Special Pythogorean Triplet
+
+```
+A Pythagorean triplet is a set of three natural numbers, a < b < c, for which, a^2 + b^2 = c^2
+
+For example, 3^2 + 4^2 = 9 + 16 = 25 = 5^2.
+
+There exists exactly one Pythagorean triplet for which a + b + c = 1000.
+Find the product abc.
+```
+
+Solution: Becaseu this is a special case of only having one solution, we do not need to worry about the array needing to contain multiple sets of solutions before having to multiply the elements. Therefore, we will need to declare a, b, c, an empty array, and a function storing the values of a, b, c in the array, which gets called if a, b, and c sum to 1000 and a^2 + b^2 =c^2.
+
+There are three for loops, nested in one another, with the outmost iterating for a, and the innermost, for c.
+
+The function returns the product of the three values stored in the array.
