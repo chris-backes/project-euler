@@ -34,5 +34,4 @@ function tripletProduct(limit) {
   }
   return pythoTrip[0] * pythoTrip[1] * pythoTrip[2];
 }
-
 console.log(tripletProduct(1000));

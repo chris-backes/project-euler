@@ -155,3 +155,13 @@ Solution: Becaseu this is a special case of only having one solution, we do not 
 There are three for loops, nested in one another, with the outmost iterating for a, and the innermost, for c.
 
 The function returns the product of the three values stored in the array.
+
+## Summation of Primes
+
+```
+The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
+
+Find the sum of all the primes below two million
+```
+
+Solution: First, as with previous problems, we need to identify primes within certain parameters with a for loop. Once those are identified, another for loop adds those primes up which have been stored in an array.
