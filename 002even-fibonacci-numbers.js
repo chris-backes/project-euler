@@ -1,21 +1,19 @@
-let i = 1;
-let j = 1;
-let array = [];
-let fib = 0;
+function evenFib(boundary) {
+  let i = 1;
+  let j = 1;
+  let fib = 0;
 
-while (i < 4000000 && j < 4000000) {
-  if (i % 2 === 0 && i < 4000000) {
-    array.push(i);
-    fib = fib + i;
+  while (i < boundary && j < boundary) {
+    if (i % 2 === 0 && i < boundary) {
+      fib = fib + i;
+    }
+    i = i + j;
+    if (j % 2 === 0 && j < boundary) {
+      fib = fib + j;
+    }
+    j = i + j;
   }
-  i = i + j;
-  if (j % 2 === 0 && j < 4000000) {
-    array.push(j);
-    fib = fib + j;
-  }
-  j = i + j;
+  return fib;
 }
-//not the answer, just helps verify the function runs correctly
-console.log(array);
 //answer
-console.log(fib);
+console.log(evenFib(4000000));

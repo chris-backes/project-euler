@@ -1,20 +1,20 @@
-var primeArray = [2, 3, 5];
-var i = 7;
-//Not strictly needed for this exercise, but added in so that code finds nth prime, where this variable is n (excluding where n is less than or equal to 3, and so those are included above)
-var primeTarget = 10001;
-var primeLogger = 0;
+function primeFinder(primeTarget) {
+  //because the loop is set up to efficeietnlycheck large number, it cannot check small numbers very well
+  let primeArray = [2, 3, 5];
+  let i = 7;
 
-while (primeArray.length < primeTarget) {
-  for (j = 2; j <= i / 3; j++) {
-    if (i % j === 0) {
-      primeLogger = primeLogger + 1;
+  while (primeArray.length < primeTarget) {
+    let primeLogger = 0;
+    for (j = 3; j <= Math.floor(Math.sqrt(i)); j += 2) {
+      if (i % j === 0) {
+        primeLogger = primeLogger + 1;
+      }
     }
+    if (primeLogger === 0) {
+      primeArray.push(i);
+    }
+    i = i + 2;
   }
-  if (primeLogger === 0) {
-    primeArray.push(i);
-  }
-  primeLogger = 0;
-  i = i + 2;
+  return primeArray[primeArray.length - 1];
 }
-
-console.log(primeArray[primeArray.length - 1]);
+console.log(primeFinder(10001));
