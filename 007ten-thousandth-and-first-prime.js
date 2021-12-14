@@ -1,19 +1,23 @@
 function primeFinder(primeTarget) {
-  //because the loop is set up to efficeietnlycheck large number, it cannot check small numbers very well
-  let primeArray = [2, 3, 5];
-  let i = 7;
+  //since 2 is the only even prime, putting it here saves us some effort in checking primality by just iterating over the odd numbers
+  //it also helps the for loop since we are only interested in checking for disors among previous primes.
+  let primeArray = [2];
+  let i = 3;
 
   while (primeArray.length < primeTarget) {
-    let primeLogger = 0;
-    for (j = 3; j <= Math.floor(Math.sqrt(i)); j += 2) {
-      if (i % j === 0) {
-        primeLogger = primeLogger + 1;
+    let primeLogger = false;
+    for (j = 0; j < primeArray.length; j++) {
+      if (i % primeArray[j] === 0) {
+        primeLogger = true;
+        //Since we have found a divisor and changed primeLogger, we can exit the loop
+        break;
       }
     }
-    if (primeLogger === 0) {
+    //Where the break goes to, and also where the for loop goes to once finishes
+    if (primeLogger === false) {
       primeArray.push(i);
     }
-    i = i + 2;
+    i += 2;
   }
   return primeArray[primeArray.length - 1];
 }

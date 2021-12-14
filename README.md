@@ -106,6 +106,15 @@ Solution: This one assumes the first three primes to streamline the code. A whil
 
 The while loop ends when an array storing all of the primes reaches a specified length, and there is a console log of the last prime added.
 
+This has gone through a couple of revisions since I first wrote it.
+
+- We now only store 2 in the array and start the iteration at 3.
+- The primeLogger is boolean
+- The for loop now iterates over the previous primes found instead of the odd numbers less than either a third or the square root of i.
+- The if statement contains a break statement to exit the for loop once a divisor is found and the Boolean is set to true.
+
+There a few more optimazations one can make to avoid having to include two intially, doing so would require the function check twice as many numbers (the even numbers), which are guaranteed not to be prime.
+
 ## Largest Product in a Series
 
 ```
