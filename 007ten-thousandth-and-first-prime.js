@@ -14,7 +14,7 @@ function primeFinder(primeTarget) {
     //divisor appear before the square root, while a prime cannot.
     //We are also only checking for divisibility by prime numbers, since any number divisible by a composite is eo ipso divisible by
     //the factors of the composite--we do not need to check for divisibility by 9 if we have already check for divisibility by three.
-    for (j = 1; j < primeArray.length && primeArray[j] < Math.sqrt(i); j++) {
+    for (j = 1; j < primeArray.length && primeArray[j] <= Math.sqrt(i); j++) {
       if (i % primeArray[j] === 0) {
         primeLogger = true;
         //Since we have found a divisor and changed primeLogger, we can exit the loop
@@ -35,3 +35,24 @@ function primeFinder(primeTarget) {
   return primeArray[primeArray.length - 1];
 }
 console.log(primeFinder(10001));
+
+//Does not assume 2 to be prime. Runs a bit slower
+function primeFinder2(primeTarget) {
+  let primeArray = [];
+  let i = 2;
+  while (primeArray.length < primeTarget) {
+    let primeLogger = false;
+    for (j = 0; j < primeArray.length && primeArray[j] <= Math.sqrt(i); j++) {
+      if (i % primeArray[j] === 0) {
+        primeLogger = true;
+        break;
+      }
+    }
+    if (primeLogger === false) {
+      primeArray.push(i);
+    }
+    i++;
+  }
+  return primeArray[primeArray.length - 1];
+}
+console.log(primeFinder2(10001));
