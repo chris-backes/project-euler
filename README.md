@@ -110,10 +110,10 @@ This has gone through a couple of revisions since I first wrote it.
 
 - We now only store 2 in the array and start the iteration at 3.
 - The primeLogger is boolean
-- The for loop now iterates over the previous primes found instead of the odd numbers less than either a third or the square root of i.
-- The if statement contains a break statement to exit the for loop once a divisor is found and the Boolean is set to true.
+- The for loop now iterates over the previous primes and checks that the divisor being checked is less than or equal to the square root of the possible prime.
+- The if statement contains a break statement to exit the for loop once both a divisor is found and the Boolean is set to true.
 
-There a few more optimazations one can make to avoid having to include two intially, doing so would require the function check twice as many numbers (the even numbers), which are guaranteed not to be prime.
+The only way not to inlude two in the array at the outset would be to double the amount of iterations the while loop needs to take and rewrtie tohe for loop to account for the fact that the very first instance of it running would not produce a number to check.
 
 ## Largest Product in a Series
 
