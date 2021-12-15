@@ -112,8 +112,7 @@ This has gone through a couple of revisions since I first wrote it.
 - The primeLogger is boolean
 - The for loop now iterates over the previous primes and checks that the divisor being checked is less than or equal to the square root of the possible prime.
 - The if statement contains a break statement to exit the for loop once both a divisor is found and the Boolean is set to true.
-
-The only way not to inlude two in the array at the outset would be to double the amount of iterations the while loop needs to take and rewrtie tohe for loop to account for the fact that the very first instance of it running would not produce a number to check.
+- j skips for divisibility by 2. It simiply isn't needed since all possibles checked are odd.
 
 ## Largest Product in a Series
 
