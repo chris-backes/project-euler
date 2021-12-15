@@ -1,4 +1,3 @@
-console.time();
 function primeFinder(primeTarget) {
   //since 2 is the only even prime, putting it here saves us some effort in checking primality by just iterating over the odd numbers
   //it also helps the for loop since we are only interested in checking for divisors among previous primes.
@@ -23,4 +22,3 @@ function primeFinder(primeTarget) {
   return primeArray[primeArray.length - 1];
 }
 console.log(primeFinder(10001));
-console.timeEnd();
