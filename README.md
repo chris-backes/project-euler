@@ -114,6 +114,8 @@ This has gone through a couple of revisions since I first wrote it.
 - The if statement contains a break statement to exit the for loop once both a divisor is found and the Boolean is set to true.
 - j skips for divisibility by 2. It simiply isn't needed since all possibles checked are odd.
 
+There are now two more solutions. The second does not assume that 2 is prime. THe third uses the fact that all primes except 2 and 3 are solutions to the equstion 6k +/- 1 to iterate.
+
 ## Largest Product in a Series
 
 ```
