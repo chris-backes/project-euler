@@ -1,9 +1,10 @@
+console.time()
 function primeFinder(primeTarget) {
-  let primeArray = [2];
-  let i = 3;
+  let primeArray = [2, 3];
+  let i = 5;
   while (primeArray.length < primeTarget) {
     let primeLogger = false;
-    for (j = 1; j < primeArray.length && primeArray[j] <= Math.sqrt(i); j++) {
+    for (j = 1; primeArray[j] <= Math.sqrt(i); j++) {
       if (i % primeArray[j] === 0) {
         primeLogger = true;
         break;
@@ -17,14 +18,16 @@ function primeFinder(primeTarget) {
   return primeArray[primeArray.length - 1];
 }
 console.log(primeFinder(10001));
+console.timeEnd()
 
+console.time()
 //Does not assume 2 to be prime. Cannot iterate by 2
 function primeFinder2(primeTarget) {
   let primeArray = [];
   let i = 2;
   while (primeArray.length < primeTarget) {
     let primeLogger = false;
-    for (j = 0; j < primeArray.length && primeArray[j] <= Math.sqrt(i); j++) {
+    for (j = 0; primeArray[j] <= Math.sqrt(i); j++) {
       if (i % primeArray[j] === 0) {
         primeLogger = true;
         break;
@@ -38,7 +41,9 @@ function primeFinder2(primeTarget) {
   return primeArray[primeArray.length - 1];
 }
 console.log(primeFinder2(10001));
+console.timeEnd()
 
+console.time()
 //uses the fact that all primes excluding 2 and 3 fit the equation 6k +/- 1.
 function primeFinder3(primeTarget) {
   let primeArray = [2, 3];
@@ -79,3 +84,4 @@ function primeFinder3(primeTarget) {
   return primeArray[primeArray.length - 1];
 }
 console.log(primeFinder3(10001));
+console.timeEnd();

@@ -1,11 +1,11 @@
 //under construction
 
 function highlyDivTriNumber(divisors) {
-  var divisorsArray = [];
+  let divisorsArray = [];
   while (divisorsArray.length < divisors - 2) {
     divisorsArray = [];
-    var triangularNumber = 1;
-    var increment = 1;
+    let triangularNumber = 1;
+    let increment = 1;
     for (let i = 1; i <= triangularNumber / 2; i++) {
       if (triangularNumber % i === 0) {
         divisorsArray.push(i);
@@ -16,5 +16,4 @@ function highlyDivTriNumber(divisors) {
   }
   return triangularNumber;
 }
-debugger;
 console.log(highlyDivTriNumber(500));
