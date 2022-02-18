@@ -7,4 +7,6 @@ function findMultiples(boundary) {
   }
   return sum;
 }
-console.log(findMultiples(1000));
+console.log(findMultiples(400));
+
+module.exports = findMultiples

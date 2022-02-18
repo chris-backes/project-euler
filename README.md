@@ -44,7 +44,7 @@ The prime factors of 13195 are 5, 7, 13 and 29.
 What is the largest prime factor of the number 600851475143 ?
 ```
 
-Solution: We check each number i between 1 and half the number num (here, 600851475143) to verify whether num is divisible by i. Since the is never any number such that it is divisble by any number greater than its own half (except for itself)--and, since this number in particular is odd, that would be any number greater than a third of itself--we do not need to chekc those numbers.
+Solution: A bit less intuitive, but as we identify factors of the number passed in, we divide the original number from that factor for as many times as is possible, and set the possible return value to that divisor. Once that is complete, we check to see if what is left of the original number after th divisions is equal to 1. If it is, we can return the factor variable. If it is not, then that means the original number has a prime factor which is greater than its own square root (of which there can only be one), and which happens to be th current value of the original number, after the division operations.
 
 ## Largest Palindrome Product
 
@@ -86,11 +86,16 @@ Hence the difference between the sum of the squares of the first ten natural num
 Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
 ```
 
-Solution: we have two different four loops.
+Solution 1 (Brute Force): We initiate a for loop.
 
-The one in which we need to square the numbers, and then sum those up, has two variable declared. One squares the number currently being iterated. The other stores the sums of those.
+Inside the loop, we add to the square of the sums (and square when the loop exits) and we add to the sum of the squares with the iterators, i, in each case (i squared in the latter)
 
-The one in which we need to add the numbers up before squaring has one variable declared to store the values as they are added during the loop. After that ends. they are squared.
+The former is subtracted from the latter.
+
+Solution 2:
+
+We square Gauss's formula to get the first number.
+We use the formula for summing squared numbers, which is derived from Faulhauser's formula
 
 The former is subtracted from the latter.
 

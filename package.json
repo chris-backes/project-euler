@@ -1,0 +1,25 @@
+{
+  "name": "project-euler",
+  "version": "1.0.0",
+  "description": "Each of the javascript files contains a solution to one of the problems (indicated by the file name).",
+  "main": "001multiple-of-3-or-5.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chris-backes/project-euler.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chris-backes/project-euler/issues"
+  },
+  "homepage": "https://github.com/chris-backes/project-euler#readme",
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "jest": "^27.4.7"
+  }
+}

@@ -3,7 +3,7 @@ function evenFib(boundary) {
   let j = 1;
   let fib = 0;
 
-  while (i < boundary && j < boundary) {
+  while (i < boundary || j < boundary) {
     if (i % 2 === 0 && i < boundary) {
       fib = fib + i;
     }
@@ -16,4 +16,6 @@ function evenFib(boundary) {
   return fib;
 }
 //answer
-console.log(evenFib(4000000));
+console.log(evenFib(150));
+
+module.exports = evenFib
