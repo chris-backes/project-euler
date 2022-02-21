@@ -2,7 +2,7 @@
 
 Each of the javascript files contains a solution to one of the problems (indicated by the file name).
 
-There is an index.html file so I can check the console and use DevTools if I need to.
+All of the problems are tested in Node, and have (or will have) accompanying jest tests.
 
 Problems can be found at projecteuler.net.
 
@@ -14,7 +14,9 @@ If we list all the natural numbers below 10 that are multiples of 3 or 5, we get
 Find the sum of all the multiples of 3 or 5 below 1000.
 ```
 
-Solution: iterate through the numbers between 1 and 1000, store the ones divisible by three or five in an array. Sum the contents of that array
+First solution: iterate through the numbers between 1 and 1000, store the ones divisible by three or five in an array. Sum the contents of that array
+
+Second Solution: modifying the Gaussian formula, we take the rounded down value of: limit - 1 / divisor for each of the divisors and their product, the latter is subtract from the sum of the former two. 
 
 ## Even Fibonacci Numbers
 
@@ -165,11 +167,11 @@ There exists exactly one Pythagorean triplet for which a + b + c = 1000.
 Find the product abc.
 ```
 
-Solution: Becaseu this is a special case of only having one solution, we do not need to worry about the array needing to contain multiple sets of solutions before having to multiply the elements. Therefore, we will need to declare a, b, c, an empty array, and a function storing the values of a, b, c in the array, which gets called if a, b, and c sum to 1000 and a^2 + b^2 =c^2.
+Solution 1: Because this is a special case of only having one solution, we do not need to worry about the array needing to contain multiple sets of solutions before having to multiply the elements. Therefore, we will need to declare a, b, c where b is always greater than a, and c greate than a
 
 There are three for loops, nested in one another, with the outmost iterating for a, and the innermost, for c.
 
-The function returns the product of the three values stored in the array.
+The function returns eother the product of a, b, and c if they equal the sum specifired, or 'nothing found'.
 
 ## Summation of Primes
 
@@ -180,3 +182,9 @@ Find the sum of all the primes below two million
 ```
 
 Solution: First, as with previous problems, we need to identify primes within certain parameters with a for loop. Once those are identified, another for loop adds those primes up which have been stored in an array.
+
+## Other Solutions
+
+Project Euler asks that those who work on these problems do not share their answer past the first 100. I have chose only to provide solitions of the first ten, in an effort to respect their wishes. Anyone wishing to contact me about working on solutions may do so at christopher.backes@gmail.com.
+
+Currently, I have solutions for: 11, 16, and 40.
