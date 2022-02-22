@@ -1,6 +1,6 @@
 //The least common multiple of any consecutive set of numbers beginning at 1 (or 2) is the product of the primes in that set, where each prime n is raised to the power p such that n^p is still less than the uppoer boundary of the set.
 //This checks if a number is prime, then raises it to the highest power, and takes that set and multiplies them together
-console.time()
+
 function leastCommonMultiple(upperBound) {
   var factors = [];
   function prime() {
@@ -33,10 +33,11 @@ function leastCommonMultiple(upperBound) {
   highestExponent();
   return factors.reduce((a, b) => a * b);
 }
+console.time()
 console.log(leastCommonMultiple(20));
 console.timeEnd();
 
-console.time()
+
 function smallestCommons(arr) {
   let bottom = arr[0] < arr[1] ? arr[0] : arr[1]
   let top = arr[0] > arr[1] ? arr[0] : arr[1]
@@ -50,6 +51,6 @@ function smallestCommons(arr) {
   }
   return nums.reduce((a, b) => a * b);
 }
-
+console.time()
 console.log(smallestCommons([1,20]));
 console.timeEnd()

@@ -187,4 +187,4 @@ Solution: First, as with previous problems, we need to identify primes within ce
 
 Project Euler asks that those who work on these problems do not share their answer past the first 100. I have chose only to provide solitions of the first ten, in an effort to respect their wishes. Anyone wishing to contact me about working on solutions may do so at christopher.backes@gmail.com.
 
-Currently, I have solutions for: 11, 16, and 40.
+Currently, I have solutions for: 11, 13, 15, 16, and 40.

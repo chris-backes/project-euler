@@ -7,6 +7,7 @@ function sumOfPrimes(upperBound) {
 		for (let m = 0; factors[m] <= Math.sqrt(j); m++) {
 			if (j % factors[m] === 0) {
 				primeLogger = true;
+				break;
 			}
 		}
 		if (primeLogger === false) {
