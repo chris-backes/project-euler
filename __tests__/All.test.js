@@ -1,6 +1,6 @@
 const { expect } = require("@jest/globals")
 const { findMultiples, findMultiples2 } = require('../001m35')
-const evenFib = require('../002efn')
+const { getEvenFibSum, getEvenFibSum2 } = require('../002efn')
 const form003 = require('../003lpf')
 const form004 = require('../004lpp')
 
@@ -34,8 +34,10 @@ test('checks the second problem', () => {
         solution: 44
     }
 
-    expect(evenFib(num1.value)).toBe(num1.solution)
-    expect(evenFib(num2.value)).toBe(num2.solution)
+    expect(getEvenFibSum(num1.value)).toBe(num1.solution)
+    expect(getEvenFibSum(num2.value)).toBe(num2.solution)
+    expect(getEvenFibSum2(num1.value)).toBe(num1.solution)
+    expect(getEvenFibSum2(num2.value)).toBe(num2.solution)
 })
 
 test('checks third problem', () => {

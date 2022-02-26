@@ -1,5 +1,5 @@
 console.time()
-function primeFinder(primeTarget) {
+function getNthPrime(primeTarget) {
   let primeArray = [2, 3];
   let i = 5;
   while (primeArray.length < primeTarget) {
@@ -17,12 +17,12 @@ function primeFinder(primeTarget) {
   }
   return primeArray[primeArray.length - 1];
 }
-console.log(primeFinder(10001));
+console.log(getNthPrime(10001));
 console.timeEnd()
 
 console.time()
 //Does not assume 2 to be prime. Cannot iterate by 2
-function primeFinder2(primeTarget) {
+function getNthPrime2(primeTarget) {
   let primeArray = [];
   let i = 2;
   while (primeArray.length < primeTarget) {
@@ -40,12 +40,12 @@ function primeFinder2(primeTarget) {
   }
   return primeArray[primeArray.length - 1];
 }
-console.log(primeFinder2(10001));
+console.log(getNthPrime2(10001));
 console.timeEnd()
 
 console.time()
 //uses the fact that all primes excluding 2 and 3 fit the equation 6k +/- 1.
-function primeFinder3(primeTarget) {
+function getNthPrime3(primeTarget) {
   let primeArray = [2, 3];
   let i = 1;
   while (primeArray.length < primeTarget) {
@@ -83,5 +83,5 @@ function primeFinder3(primeTarget) {
   }
   return primeArray[primeArray.length - 1];
 }
-console.log(primeFinder3(10001));
+console.log(getNthPrime3(10001));
 console.timeEnd();

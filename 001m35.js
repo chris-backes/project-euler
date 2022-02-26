@@ -9,19 +9,20 @@ function findMultiples(boundary) {
 }
 
 console.time()
-console.log(findMultiples(400));
+console.log(findMultiples(100000));
 console.timeEnd();
 
 function findMultiples2(boundary, num1, num2) {
-  function gaussSum(passedNum, multiplier) {
+  // The name of the function indicates the nature of the shortcut
+  function getGaussSum(passedNum, multiplier) {
     const newNum = Math.floor((passedNum - 1) / multiplier)
     return newNum * (newNum + 1) / 2 * multiplier
   }
-  return gaussSum(boundary, num1) + gaussSum(boundary, num2) - gaussSum(boundary, num1 * num2)
+  return getGaussSum(boundary, num1) + getGaussSum(boundary, num2) - getGaussSum(boundary, num1 * num2)
 }
 
 console.time()
-console.log(findMultiples2(400, 3, 5))
+console.log(findMultiples2(100000, 3, 5))
 console.timeEnd()
 
 module.exports = { findMultiples, findMultiples2 }

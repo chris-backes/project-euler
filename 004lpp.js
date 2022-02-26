@@ -1,38 +1,91 @@
-function palindromeProduct(i, j) {
-  let init = 1
+function palindromeProduct1(i, j) {
   let product = 0;
   let reverseProduct = 0;
-  let array = [];
+  let result = 0
 
   while (i >= 0) {
     product = i * j;
-    product = product.toString();
-    reverseProduct = product;
-    reverseProduct = reverseProduct.split("");
-    reverseProduct = reverseProduct.reverse();
-    reverseProduct = reverseProduct.join("");
-    if (reverseProduct === product) {
-      array.push(product);
+    reverseProduct = parseInt(product.toString().split("").reverse().join(""))
+    if (reverseProduct === product && product > result) {
+      result = product
     }
     while (j >= 0) {
       product = i * j;
-      product = product.toString();
-      reverseProduct = product;
-      reverseProduct = reverseProduct.split("");
-      reverseProduct = reverseProduct.reverse();
-      reverseProduct = reverseProduct.join("");
-      if (reverseProduct === product) {
-        array.push(product);
+      reverseProduct = parseInt(product.toString().split("").reverse().join(""))
+      if (reverseProduct === product && product > result) {
+        result = product
       }
       j--;
     }
-    j = init;
+    j = i;
     i--;
   }
-  array.sort((a, b) => b - a);
-  return array[0];
+  return result
 }
 //highest number is first in the array
-console.log(palindromeProduct(999, 999));
+console.time('palindrome-1')
+palindromeProduct1(999, 999);
+console.timeEnd('palindrome-1')
 
-module.exports = palindromeProduct
+Number.prototype.getReverse = function() {
+  "use strict";
+  let reverseNum = 0
+  let num = this
+  while(num > 0) {
+    reverseNum = (10 * reverseNum) + (num % 10)
+    num = Math.floor(num / 10)
+  }
+  return reverseNum
+}
+
+function getReverseNum(num) {
+  let reverseNum = 0
+  while (num > 0) {
+    reverseNum = (10 * reverseNum) + (num % 10)
+    num = Math.floor(num / 10)
+  }
+  return reverseNum
+}
+
+const numb = 12345678
+console.time('prototype')
+for (let k = 0; k < 10000000; k++) {
+  numb.getReverse()
+}
+console.timeEnd('prototype')
+
+console.time('call')
+for (let k = 0; k < 10000000; k++) {
+  getReverseNum(numb)
+}
+console.timeEnd('call')
+
+function palindromeProduct2(i, j) {
+  let floor = (i + 1) / 10
+  let product = 0;
+  let reverseProduct = 0;
+  let result = 0
+
+  while (i > floor) {
+    product = i * j;
+    reverseProduct = getReverseNum(product)
+    if (reverseProduct === product && result < product) {
+      result = product
+    }
+    while (j > floor) {
+      product = i * j;
+      reverseProduct = getReverseNum(product)
+      if (reverseProduct === product && result < product) {
+        result = product
+      }
+      j--;
+    }
+    i--;
+    j = i;
+  }
+  return result;
+}
+console.time('palindrome-2');
+palindromeProduct2(999, 999)
+console.timeEnd('palindrome-2');
+module.exports = { palindromeProduct1, palindromeProduct2 }
