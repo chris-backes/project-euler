@@ -191,5 +191,5 @@ Solution: First, as with previous problems, we need to identify primes within ce
 
 Project Euler asks that those who work on these problems do not share their answer past the first 100. I have chose only to provide solutions of the first ten, in an effort to respect their wishes. Anyone wishing to contact me about working on solutions may do so at christopher.backes@gmail.com.
 
-Currently, I have solutions for: 11, 13, 15, 16, 40, 69.
-the highest difficulty is 10%.
+Currently, I have solutions for: 11, 12, 13, 14, 15, 16, 19, 40, 69.
+The highest difficulty is 10%.

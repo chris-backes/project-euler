@@ -33,9 +33,15 @@ function leastCommonMultiple(upperBound) {
   highestExponent();
   return factors.reduce((a, b) => a * b);
 }
-console.time()
-console.log(leastCommonMultiple(20));
-console.timeEnd();
+console.time('loop-complicated')
+for (let i = 0; i < 20; i++) {
+  leastCommonMultiple(20);
+  leastCommonMultiple(15);
+  leastCommonMultiple(25);
+  leastCommonMultiple(200);
+  leastCommonMultiple(100);
+}
+console.timeEnd('loop-complicated');
 
 
 function smallestCommons(arr) {
@@ -51,6 +57,33 @@ function smallestCommons(arr) {
   }
   return nums.reduce((a, b) => a * b);
 }
-console.time()
-console.log(smallestCommons([1,20]));
-console.timeEnd()
+console.time('loop-simplified')
+for (let i = 0; i < 20; i++) {
+  smallestCommons([1,20]);
+  smallestCommons([1,15]);
+  smallestCommons([1,25]);
+  smallestCommons([1,200]);
+  smallestCommons([1,100]);
+}
+console.timeEnd('loop-simplified')
+
+//Can process bottom limits which are not one or two. Recurive nature means that call stack is the major limiter
+function getLCM3(arr) {
+  const [bottom, top] = arr.sort((a, b) => a - b);
+  let nums = Array(top - bottom + 1).fill().map((x, i) => i + bottom)
+
+  const gcd = (a, b) => (b === 0) ? a : gcd(b, a % b)
+
+  const lcm = (a, b) => (a * b) / gcd(a, b)
+
+  return nums.reduce((a, b) => lcm(a, b));
+}
+console.time('recursive')
+for (let i = 0; i < 20; i++) {
+  getLCM3([1,20]);
+  getLCM3([1,15]);
+  getLCM3([1,25]);
+  getLCM3([1,200]);
+  getLCM3([1,100]);
+}
+console.timeEnd('recursive')

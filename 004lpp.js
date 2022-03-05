@@ -68,13 +68,13 @@ function palindromeProduct2(i, j) {
 
   while (i > floor) {
     product = i * j;
-    reverseProduct = getReverseNum(product)
+    reverseProduct = product.getReverse()
     if (reverseProduct === product && result < product) {
       result = product
     }
     while (j > floor) {
       product = i * j;
-      reverseProduct = getReverseNum(product)
+      reverseProduct = product.getReverse()
       if (reverseProduct === product && result < product) {
         result = product
       }
