@@ -1,8 +1,8 @@
 # Solutions to Project Euler problems
 
-Each of the javascript files contains a solution to one of the problems (indicated by the file name).
+Each file contains a solution to one of the first ten problems, either in Rust or JavaScript. The JavaScript files contain multiple solutions; the rust files were written later and only contian the most performant solutions.
 
-All of the problems are tested in Node, and have (or will have) accompanying jest tests.
+All of the JavaScript problems are tested in Node, and have (or will have) accompanying jest tests.
 
 Problems can be found at [projecteuler.net](projecteuler.net).
 
@@ -41,6 +41,8 @@ We set to the next value in the sequence by seting either i or j to sum of i and
 The while loop ends when both i and j are above four million. If we set it to either rather than both, there is a scenario where one is above the that and the other is both below that and even, and _would not get logged since the while loop would have stopped_. To prevent that, we set to both, and have each if conditional check for being less than the limit as well.
 
 Solution 2: Since it can be demonstrated that every third number in the Fibonacci sequence is even, we can iterate by sets of three, and only check to make sure the even numebr is less than the limit. It is added to the sum in each iteration.
+
+Solution 3: While not strictly better for the purposes of this task, the value of the nth term in the Fibonnaci sequence (assuming it begins at 1, 1, 2) is one over the square root of five, multiplied by the difference between (a) the sum of the square root of five and one divided by two, to the nth power and (b) the difference of 1 and the square root of five, divided by two, to the nth power.
 
 ## Largest Prime Factor
 

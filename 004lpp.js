@@ -47,19 +47,6 @@ function getReverseNum(num) {
   return reverseNum
 }
 
-const numb = 12345678
-console.time('prototype')
-for (let k = 0; k < 10000000; k++) {
-  numb.getReverse()
-}
-console.timeEnd('prototype')
-
-console.time('call')
-for (let k = 0; k < 10000000; k++) {
-  getReverseNum(numb)
-}
-console.timeEnd('call')
-
 function palindromeProduct2(i, j) {
   let floor = (i + 1) / 10
   let product = 0;
@@ -85,7 +72,7 @@ function palindromeProduct2(i, j) {
   }
   return result;
 }
-console.time('palindrome-2');
+
 palindromeProduct2(999, 999)
-console.timeEnd('palindrome-2');
+
 module.exports = { palindromeProduct1, palindromeProduct2 }

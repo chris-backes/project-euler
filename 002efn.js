@@ -15,9 +15,8 @@ function getEvenFibSum(boundary) {
   }
   return fib;
 }
-console.time()
+
 console.log(getEvenFibSum(400000000));
-console.timeEnd()
 
 //every third number of the series is even which can be proven by:
 //any two odd numbers must equal an even number and 
@@ -36,11 +35,28 @@ function getEvenFibSum2(limit){
     b = a + c
     c = a + b
   }
-  return sum
+  console.log(sum)
+  // return sum
 }
-
 console.time()
-console.log(getEvenFibSum2(400000000));
+getEvenFibSum2(4000000);
 console.timeEnd()
 
-module.exports = { getEvenFibSum, getEvenFibSum2 }
+function getEvenFibSum3(limit) {
+  let sqrtFive = Math.sqrt(5)
+  let legOne = 1 / sqrtFive
+  let legTwo = (1 + sqrtFive) / 2
+  let legThree = (1 - sqrtFive) / 2
+  let counter = 3
+  function getCurr(n) {
+    return Math.round(legOne * ((legTwo ** n) - (legThree ** n)))
+  }
+  let res = 0
+  while (getCurr(n) < limit) {
+    res = res + getCurr(counter)
+    counter = counter + 3
+  }
+  return res
+}
+
+module.exports = { getEvenFibSum, getEvenFibSum2, getEvenFibSum3 }
