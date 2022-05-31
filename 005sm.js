@@ -78,12 +78,6 @@ function getLCM3(arr) {
 
   return nums.reduce((a, b) => lcm(a, b));
 }
-console.time('recursive')
-for (let i = 0; i < 20; i++) {
-  getLCM3([1,20]);
-  getLCM3([1,15]);
-  getLCM3([1,25]);
-  getLCM3([1,200]);
-  getLCM3([1,100]);
-}
-console.timeEnd('recursive')
+
+getLCM3([1,20]);
+

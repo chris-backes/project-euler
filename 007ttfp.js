@@ -17,7 +17,7 @@ function getNthPrime(primeTarget) {
   }
   return primeArray[primeArray.length - 1];
 }
-console.log(getNthPrime(10001));
+console.log(getNthPrime(9916));
 console.timeEnd()
 
 console.time()
