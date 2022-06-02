@@ -1,4 +1,8 @@
-node_modules
 more
+
+# javascript
+node_modules
+
+# rust files
 **/target
 **/Cargo.lock

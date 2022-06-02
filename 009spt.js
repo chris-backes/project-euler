@@ -26,9 +26,8 @@ function tripletProduct(limit) {
 	}
 	return "Nothing found";
 }
-console.time();
+
 console.log(tripletProduct(1000));
-console.timeEnd();
 
 function tripletProduct2(num) {
 	let limA = num / 3;
@@ -43,9 +42,8 @@ function tripletProduct2(num) {
 	}
 	return "Nothing found";
 }
-console.time();
+
 console.log(tripletProduct2(1000));
-console.timeEnd();
 
 // a = m2 − n2, b = 2 · m · n, c = m2 + n2
 

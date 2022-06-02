@@ -1,24 +1,24 @@
-function sumOfPrimes(upperBound) {
+function sumOfPrimes(limit) {
 	let factors = [2];
 	let sumPrimes = 2;
 	let j = 3;
-	let primeLogger = false;
-	while (j < upperBound) {
-		for (let m = 0; factors[m] <= Math.sqrt(j); m++) {
+	let isPrime = false;
+	while (j < limit) {
+		for (let m = 1; factors[m] <= Math.sqrt(j); m++) {
 			if (j % factors[m] === 0) {
-				primeLogger = true;
+				isPrime = true;
 				break;
 			}
 		}
-		if (primeLogger === false) {
+		if (!isPrime) {
 			factors.push(j);
-			sumPrimes = sumPrimes + j;
+			sumPrimes += j;
 		}
-		primeLogger = false;
-		j = j + 2;
+		isPrime = false;
+		j += 2;
 	}
 	return sumPrimes;
 }
-console.time();
-console.log(sumOfPrimes(2000000));
-console.timeEnd();
+
+let a = sumOfPrimes(2000000)
+console.log(a)
